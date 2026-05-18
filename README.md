@@ -125,6 +125,7 @@ the 28 benchmarks below. Baseline is the latest CRuby `miniruby` build
 (without bundled gems), which is considerably faster than the system
 `ruby` (3.2.3); Spinel's advantage is correspondingly smaller but still
 substantial on computation-heavy workloads.
+Note that this is not a fair comparison because Spinel does not implement full Ruby semantics, for example it does not check for overflow on arithmetic operations.
 
 ### Computation
 
@@ -488,6 +489,8 @@ them behind compile-time switches.
 
 ## Limitations
 
+- **No require**: only `require_relative` resolvable at parse time. Calls to `require` are currently ignored.
+- **No large integers**: Only 64-bit integers, which can overflow
 - **No eval**: `eval`, `instance_eval`, `class_eval`
 - **No metaprogramming**: `send`, `method_missing`, `define_method` (dynamic)
 - **No threads**: `Thread`, `Mutex` (Fiber is supported)
