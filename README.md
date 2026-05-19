@@ -498,7 +498,7 @@ them behind compile-time switches.
 
 ## Limitations
 
-- **Limited Bigint support**: 64-bit integers are used by default; arbitrary precision is only available via specific auto-promotion patterns.
+- **No automatic Bigint promotion**: 64-bit integers are used by default; arbitrary precision is only available via specific auto-promotion patterns.
 - **No require**: only `require_relative "literal/path"`
 - **No eval**: `eval`, `instance_eval`, `class_eval`
 - **No metaprogramming**: `send`, `method_missing`, `define_method` (dynamic)
